@@ -62,7 +62,7 @@ class PushoverLogRoute extends CLogRoute {
             'user'    => $this->userKey,
             'message' => $message
         );
-        $params += $this->levelOptions[$level] + $options;
+        $params += $this->levelOptions[$level] + $options + $this->options;
 
         $context = stream_context_create(array(
             'http' => array(
