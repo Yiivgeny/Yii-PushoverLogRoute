@@ -46,19 +46,6 @@ class PushoverLogRoute extends CLogRoute {
      */
     public $levels = 'error';
 
-    protected function getMaxLevelEntry($logs) {
-        $levelPriority = array_flip(array_keys($this->levelOptions));
-        $lastLevel     = -1;
-        $result        = null;
-        foreach ($logs AS $entry) {
-            if ($lastLevel < $levelPriority[$entry[1]]) {
-                $result    = $entry;
-                $lastLevel = $levelPriority[$entry[1]];
-            }
-        }
-        return $result;
-    }
-
     protected function sendNotification($message, $level, $options = array()) {
         $params = array(
             'token'   => $this->token,
@@ -100,13 +87,14 @@ class PushoverLogRoute extends CLogRoute {
     }
 
     protected function processLogs($logs) {
-        $log = $this->getMaxLevelEntry($logs);
-        list($message) = explode("\n", $log[0], 2);
-
-        $options = array(
-            'title' => Yii::app()->name.' ['.$log[1].']'
-        );
-        $this->sendNotification($message, $log[1], $options);
+        $title = Yii::app()->name;
+        foreach ($logs as $log) {
+            list($message) = explode("\n", $log[0], 2);
+            $options = array(
+                'title' => $title.' ['.$log[1].']'
+            );
+            $this->sendNotification($message, $log[1], $options);
+        }
     }
 
 }

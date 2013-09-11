@@ -1,5 +1,6 @@
 #Yii PushoverLogRoute extension
-Report highest-level log entry to your mobile device by [Pushover.net](http://pushover.net/api).
+Send logs to your mobile device by [Pushover.net](http://pushover.net/api).
+Recommended for alarm reports or non-frequent messages.
 
 - Immediate log dilevery
 - Customized notification diliverying (silent hours, level, sounds) via pushover service API.
