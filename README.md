@@ -64,3 +64,4 @@ array(
 ##Resources
 - [Pushover API](http://pushover.net/api)
 - [GitHub Repo](https://github.com/Yiivgeny/Yii-PushoverLogRoute/)
+- [Extension page](http://www.yiiframework.com/extension/pushover-log-route/)
