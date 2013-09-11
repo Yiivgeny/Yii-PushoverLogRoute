@@ -1,5 +1,18 @@
 <?php
+/**
+ * Yii Framework extension.
+ * Send logs to your mobile device by http://pushover.net/
+ *
+ * @author Evgeny Blinov <e.a.blinov@gmail.com>
+ * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ */
 
+/**
+ * Log route class for sending logs by http://pushover.net/
+ *
+ * @author Evgeny Blinov <e.a.blinov@gmail.com>
+ * @package PushoverLogRoute
+ */
 class PushoverLogRoute extends CLogRoute {
 
     const API_URL = 'https://api.pushover.net/1/messages.json';
