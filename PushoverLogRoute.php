@@ -41,7 +41,7 @@ class PushoverLogRoute extends CLogRoute {
         ),
     );
     /**
-     * Not recomended include trace, profile or info levels. It's cause flood your device.
+     * Not recommended include trace, profile or info levels. It's cause flood your device.
      * @var string list of levels separated by comma or space. Defaults to 'error', meaning all levels.
      */
     public $levels = 'error';

@@ -37,7 +37,7 @@ array(
     'userKey' => '*your-user-key-on-pushover*',
 
     //Customize logging levels
-    'level' => 'warning, error', //Important: by default level set to 'error' only
+    'levels' => 'warning, error', //Important: by default level set to 'error' only
 
     //Customize API params for all notify
     'options' => array(
