@@ -40,7 +40,10 @@ class PushoverLogRoute extends CLogRoute {
             'priority' => 1
         ),
     );
-
+    /**
+     * Not recomended include trace, profile or info levels. It's cause flood your device.
+     * @var string list of levels separated by comma or space. Defaults to 'error', meaning all levels.
+     */
     public $levels = 'error';
 
     protected function getMaxLevelEntry($logs) {
