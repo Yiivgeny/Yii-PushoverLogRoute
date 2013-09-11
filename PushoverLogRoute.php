@@ -101,7 +101,7 @@ class PushoverLogRoute extends CLogRoute {
 
     protected function processLogs($logs) {
         $log = $this->getMaxLevelEntry($logs);
-        list($message, $description) = explode("\n", $log[0], 2) + array(1 => null);
+        list($message) = explode("\n", $log[0], 2);
 
         $options = array(
             'title' => Yii::app()->name.' ['.$log[1].']'
